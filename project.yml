@@ -1,0 +1,60 @@
+name: RescueMate
+options:
+  bundleIdPrefix: com.rescuemate
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: 1
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  RescueMate:
+    type: application
+    platform: iOS
+    sources:
+      - RescueMate
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rescuemate.app
+        # 运营方可选：把整包 Key 通过 xcconfig 注入 AMAP_API_KEY。
+        # 留空表示不随包分发 Key，每位用户在 App 内使用自己的高德 Key。
+        AMAP_API_KEY: ""
+        # 预留：若日后改为服务器端代理高德接口，填服务器基地址即可切换，源码无需改动。
+        SERVER_API_BASE: ""
+    info:
+      path: RescueMate/Info.plist
+      properties:
+        CFBundleDisplayName: 救援宝
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen: {}
+        NSLocationWhenInUseUsageDescription: 用于在您需要救援时记录当前位置，并搜索附近的修理店、医院等救援点。定位信息只保存在您的手机上。
+        LSApplicationQueriesSchemes:
+          - iosamap
+        ITSAppUsesNonExemptEncryption: false
+  RescueMateTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - Tests
+    dependencies:
+      - target: RescueMate
+
+schemes:
+  RescueMate:
+    build:
+      targets:
+        RescueMate: all
+        RescueMateTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - RescueMateTests

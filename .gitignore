@@ -1,0 +1,16 @@
+# Xcode 工程由 xcodegen 从 project.yml 生成，不随仓库分发
+*.xcodeproj
+
+# Xcode 噪音
+xcuserdata/
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# 系统
+.DS_Store
+
+# 本机工具状态
+.mimosa/
