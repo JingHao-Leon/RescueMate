@@ -9,6 +9,8 @@
 [![Swift](https://img.shields.io/badge/Swift-5-orange.svg)](https://swift.org)
 [![SwiftUI](https://img.shields.io/badge/SwiftUI-MapKit-007AFF.svg)](https://developer.apple.com/documentation/mapkit)
 [![AMap](https://img.shields.io/badge/%E9%AB%98%E5%BE%B7%20API-BYOK%20Key-green.svg)](https://lbs.amap.com/)
+[![GitHub last commit](https://img.shields.io/github/last-commit/JingHao-Leon/RescueMate)](https://github.com/JingHao-Leon/RescueMate/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/JingHao-Leon/RescueMate)](https://github.com/JingHao-Leon/RescueMate)
 
 <table>
   <tr>
